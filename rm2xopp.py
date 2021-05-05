@@ -23,7 +23,7 @@ stroke_colour = {
 
 
 def main():
-    parser = argparse.ArgumentParser(prog=__prog_name__)
+    parser = argparse.ArgumentParser()
     parser.add_argument('--height',
                         help='Desired height of image',
                         type=float,
@@ -49,9 +49,6 @@ def main():
                         help="Colour annotations for document markup.",
                         action='store_true',
                         )
-    parser.add_argument('--version',
-                        action='version',
-                        version='%(prog)s {version}'.format(version=__version__))
     args = parser.parse_args()
 
     if not os.path.exists(args.input):
